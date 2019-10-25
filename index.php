@@ -13,7 +13,7 @@ if (isset($_GET['del'])) {
 	$id=$_GET['del'];
 
 	$employee=new Employees;
-	$employee->delete_rec('$id');
+	$employee->delete_rec($id);
 	echo $id;
 }
 
