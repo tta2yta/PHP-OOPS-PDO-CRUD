@@ -38,10 +38,14 @@ foreach ($fields as $key => $value) {
 }
 
 $stmtExec=$stmt->execute();
-
+//echo $sql;
 if ($stmtExec) {
-	header(("Location:index.php"));
+	//header(("Location:index.php"));
+	return " <h5>Record successfully Inserted </h5>";
 }
+else
+	return "<h5>Record Not Inserted</h5>";
+
 }
 
 public function Selectone($id)
@@ -95,16 +99,19 @@ else
 
 public function delete_rec($id)
 {
-	//$sql="DELETE from employees where id= :id";
+	$sql="DELETE from employees where id= :id";
 	//$stmt=$this->connect()->prepare($sql);
 	//$stmt->bindValue(":id",$id);
 	//$stmtExec=$stmt->execute();
-	$sql="delete from employees where id= :id";
+	//echo $id;
+	//$sql="delete from employees where id=". $id;
+	//echo $sql;
 	$stmt=$this->connect()->prepare($sql);
 	$stmt->bindValue(":id",$id);
 	//$stmt->execute();
 	$stmtExec=$stmt->execute();
-	echo $id;
+	//echo $id;
+	//echo $sql;
 	if ($stmtExec) {
 	//echo "stringooo";
 }
