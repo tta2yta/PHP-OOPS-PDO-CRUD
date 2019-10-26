@@ -14,7 +14,7 @@ if (isset($_GET['del'])) {
 
 	$employee=new Employees;
 	$employee->delete_rec($id);
-	echo $id;
+	//echo $id;
 }
 
 ?>
@@ -79,13 +79,15 @@ if (isset($_GET['del'])) {
 	<div class="col-lg-12">
 		<div class="jumbotron">
 			<h4 class="mb-4">All Employess</h4>
+			<h5 class="mb-4"><a href="add_emp.html">Add New Employee</a></h5>
 			<table class="table">
   <thead>
     <tr>
       <th scope="col">Id</th>
       <th scope="col">Name</th>
-      <th scope="col">City</th>
+      <th scope="col">age</th>
       <th scope="col">Designation</th>
+       <th scope="col">Email</th>
         <th scope="col">Action</th>
     </tr>
   </thead>
@@ -99,8 +101,9 @@ foreach ($rows as $row) {
 	<tr>
       <th scope="row"><?php echo $row['id'];?></th>
       <td><?php echo $row['name'];?></td>
-      <td><?php echo $row['city'];?></td>
+      <td><?php echo $row['age'];?></td>
       <td><?php echo $row['designation'];?></td>
+      <td><?php echo $row['email'];?></td>
       <td><a href="edit.php?id=<?php echo $row['id'];?>" class="btn btn-sm btn-primary ">Edit</a>&nbsp;<a href="index.php?del=<?php echo $row['id'];?>" class="btn btn-sm btn-danger">Delete</a></td>
     </tr>
 	<?php
