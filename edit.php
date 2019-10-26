@@ -22,13 +22,15 @@ if(isset($_POST['submit']))
 {
 	//header(("Location:index.php"));
 	$name=$_POST['name'];
-	$city=$_POST['city'];
+	$age=$_POST['age'];
 	$designation=$_POST['designation'];
+  $email=$_POST['email'];
 
 $fields=[
 'name'=>$name,
-'city'=>$city,
-'designation'=>$designation];
+'age'=>$age,
+'designation'=>$designation,
+'email'=>$email];
 
   $id=$_POST['id'];
 $employee=new Employees;
@@ -111,13 +113,18 @@ $employee->update($fields,$id);
     
   </div>
   <div class="form-group">
-    <label for="city">City</label>
-    <input type="text" class="form-control" name="city" value="<?php echo $result['city']; ?>"placeholder="city">
+    <label for="age">age</label>
+    <input type="text" class="form-control" name="age" value="<?php echo $result['age']; ?>" placeholder="age">
   </div>
 
   <div class="form-group">
-    <label for="city">Designation</label>
-    <input type="text" class="form-control" name="designation" value="<?php echo $result['designation']; ?>"placeholder="designation">
+    <label for="age">Designation</label>
+    <input type="text" class="form-control" name="designation" value="<?php echo $result['designation']; ?>" placeholder="designation">
+  </div>
+
+  <div class="form-group">
+    <label for="age">Email</label>
+    <input type="text" class="form-control" id="email" name="email" value="<?php echo $result['email']; ?>"" placeholder="email">
   </div>
   
   <input  type="submit" name="submit" class="btn btn-primary">
